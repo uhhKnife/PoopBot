@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@discordjs/rest": "^1.2.0",
+    "discord.js": "^14.5.0"
+  },
+  "name": "poopbot",
+  "version": "1.0.0",
+  "description": "Poop",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "Lil Poop",
+  "license": "ISC"
+}
