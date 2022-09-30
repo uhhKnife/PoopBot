@@ -1,6 +1,13 @@
-const {Client, GatewayIntentBits, Routes, Collection} = require("discord.js");
+const {Client, GatewayIntentBits, Routes, Collection, EmbedBuilder} = require("discord.js");
 const botConfig = require("./botConfig.json");
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMembers,
+	],
+});
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -53,5 +60,7 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
+
+
 
 client.login(botConfig.token);
