@@ -23,7 +23,7 @@ module.exports = {
 
         interaction.guild.channels.cache.forEach((channel) => {
             
-            if (channel.name === userName.toLowerCase() + "#" + userDiscriminator) {
+            if (channel.name === userName.toLowerCase() + "_" + userDiscriminator) {
                 interaction.reply("❌ You already have a ticket!");
                 ticketExits = true;
                 return;
@@ -31,7 +31,7 @@ module.exports = {
         })
         if (ticketExits) return;
 
-        interaction.guild.channels.create({ name: userName.toLowerCase() + "#" + userDiscriminator, type: ChannelType.GuildText, parent: categoryId}).then(
+        interaction.guild.channels.create({ name: userName.toLowerCase() + "_" + userDiscriminator, type: ChannelType.GuildText, parent: categoryId}).then(
             (createdchan) => {
                 createdchan.permissionOverwrites.edit(interaction.guild.roles.cache.find(x => x.name === "@everyone"), {
  
