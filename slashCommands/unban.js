@@ -25,7 +25,7 @@ module.exports = {
 
         var unbanEmbed = new EmbedBuilder()
             .setColor("#ff80f7")    
-            .setAuthor({name: "Ban", iconURL: 'https://i.postimg.cc/2ynSrGrj/icontitle.png' })
+            .setAuthor({name: "Unban", iconURL: 'https://i.postimg.cc/2ynSrGrj/icontitle.png' })
             .setTimestamp()
             .setDescription(`**Member:** ${member.user.tag} (${member.user.id})\n**Action:** Unban`);
         interaction.reply(`${member.user.tag} is unbanned!`);
