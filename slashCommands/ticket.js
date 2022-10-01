@@ -15,15 +15,23 @@ module.exports = {
         const categoryId = "1025136434769842198";
         
         var userName = interaction.user.username;
-        var userDsicriminator = interaction.user.dsicriminator;
+        var userDiscriminator = interaction.user.discriminator;
 
         const reason = await interaction.options.getString("reason");
 
         var ticketExits = false;
 
+        interaction.guild.channels.cache.forEach((channel) => {
+            
+            if (channel.name === userName.toLowerCase() + "#" + userDiscriminator) {
+                interaction.reply("❌ You already have a ticket!");
+                ticketExits = true;
+                return;
+            }
+        })
         if (ticketExits) return;
 
-        interaction.guild.channels.create({ name: userName.toLowerCase() + "_" + Math.random(), type: ChannelType.GuildText, parent: categoryId}).then(
+        interaction.guild.channels.create({ name: userName.toLowerCase() + "#" + userDiscriminator, type: ChannelType.GuildText, parent: categoryId}).then(
             (createdchan) => {
                 createdchan.permissionOverwrites.edit(interaction.guild.roles.cache.find(x => x.name === "@everyone"), {
  

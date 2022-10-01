@@ -20,7 +20,7 @@ module.exports = {
 
         var closeEmbed = new EmbedBuilder()
         .setColor("#ff80f7")    
-        .setAuthor({name: "CLOSED", iconURL: 'https://i.postimg.cc/2ynSrGrj/icontitle.png' })
+        .setAuthor({name: "Ticked closed", iconURL: 'https://i.postimg.cc/2ynSrGrj/icontitle.png' })
         .setTimestamp()
         .setTitle("Ticket " + interaction.channel.name + " Closed")
         .setDescription("The ticket has been closed");
