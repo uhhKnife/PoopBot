@@ -63,4 +63,27 @@ client.on('interactionCreate', async interaction => {
 
 
 
+client.on('guildMemberAdd', async (member) => {
+	var welcomeEmbed = new EmbedBuilder()
+            .setColor('#ff80f7')
+            .setTitle('<:1_:1017414263918301204> Member!')
+            .setDescription(`Hey ${member}, welcome to **Lil Poops T6 Plutonium Servers**!`)
+            .setThumbnail('https://i.postimg.cc/SsJVM4C1/uzi.png')
+            .setAuthor ( {name: 'Poop', iconURL: 'https://i.postimg.cc/FRggMKy6/blunt.gif' } );
+	member.guild.channels.cache.find(c => c.name.toLowerCase() == "welcome").send({embeds: [welcomeEmbed]})
+	var messageEmbed = new EmbedBuilder()
+            .setColor('#ff80f7')
+            .setTitle('Welcome! <a:pinkverify:1017411282376339526>')
+            .setDescription(`Have a great time here at **Lil Poops T6 Plutonium Servers**`)
+            .setThumbnail('https://i.postimg.cc/2Sj2dnfK/python.png')
+            .setAuthor ( {name: 'Poop', iconURL: 'https://i.postimg.cc/GhxXsq6D/poop.png' } );
+	
+	member.send(({embeds: [messageEmbed]}))
+	let role = member.guild.roles.cache.find(r => r.name.toLowerCase() == "member")
+	if(!role) return;
+	member.roles.add(role);
+
+}); 
+
+
 client.login(botConfig.token);
