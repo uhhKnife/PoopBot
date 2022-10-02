@@ -1,5 +1,3 @@
-//clientId = application id
-//guildId = server id
 const {Client, GatewayIntentBits, Routes, Collection, EmbedBuilder} = require("discord.js");
 const botConfig = require("./botConfig.json");
 const client = new Client({
