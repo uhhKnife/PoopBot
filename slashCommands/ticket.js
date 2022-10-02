@@ -12,7 +12,7 @@ module.exports = {
             ),
 	async execute(client, interaction) {
 
-        const categoryId = "1025136434769842198";
+        const categoryId = "1025136434769842198"; //Ticket channel category id
         
         var userName = interaction.user.username;
         var userDiscriminator = interaction.user.discriminator;
@@ -50,7 +50,7 @@ module.exports = {
                     ViewChannel: true
                 });
                  
-                createdchan.permissionOverwrites.edit(interaction.guild.roles.cache.find(x => x.name === "Owner 👑" && "Admin" && "Moderator"), {
+                createdchan.permissionOverwrites.edit(interaction.guild.roles.cache.find(x => x.name === "Owner 👑" && "Admin" && "Moderator"), { //Roles that are added to ticket channel
                     CreateInstantInvite: false,
                     ReadMessageHistory: true,
                     SendMessages: true,

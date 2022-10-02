@@ -1,3 +1,5 @@
+//clientId = application id
+//guildId = server id
 const {Client, GatewayIntentBits, Routes, Collection, EmbedBuilder} = require("discord.js");
 const botConfig = require("./botConfig.json");
 const client = new Client({
@@ -79,7 +81,7 @@ client.on('guildMemberAdd', async (member) => {
             .setAuthor ( {name: 'Poop', iconURL: 'https://i.postimg.cc/GhxXsq6D/poop.png' } );
 	
 	member.send(({embeds: [messageEmbed]}))
-	let role = member.guild.roles.cache.find(r => r.name.toLowerCase() == "member")
+	let role = member.guild.roles.cache.find(r => r.name.toLowerCase() == "member") //Role name for new users
 	if(!role) return;
 	member.roles.add(role);
 
