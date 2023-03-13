@@ -25,7 +25,7 @@ module.exports = {
         .setTitle("Ticket " + interaction.channel.name + " Closed")
         .setDescription("The ticket has been closed");
 
-        var ticketChannel = interaction.member.guild.channels.cache.find(channel => channel.name === "log");
+        var ticketChannel = interaction.member.guild.channels.cache.find(channel => channel.name === "log"); //"log" = closed ticket channel
         if (!ticketChannel) interaction.reply({ content: "Channel doesn't exist!" });
  
         ticketChannel.send({ embeds: [closeEmbed] });
