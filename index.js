@@ -70,7 +70,7 @@ client.on('guildMemberAdd', async (member) => {
             .setDescription(`Hey ${member}, welcome to **Lil Poops T6 Plutonium Servers**!`)
             .setThumbnail('https://i.postimg.cc/SsJVM4C1/uzi.png')
             .setAuthor ( {name: 'Poop', iconURL: 'https://i.postimg.cc/FRggMKy6/blunt.gif' } );
-	member.guild.channels.cache.find(c => c.name.toLowerCase() == "welcome").send({embeds: [welcomeEmbed]})
+	member.guild.channels.cache.find(c => c.name.toLowerCase() == "welcome").send({embeds: [welcomeEmbed]}) //"welcome" = channel name
 	var messageEmbed = new EmbedBuilder()
             .setColor('#ff80f7')
             .setTitle('Welcome! <a:pinkverify:1017411282376339526>')
